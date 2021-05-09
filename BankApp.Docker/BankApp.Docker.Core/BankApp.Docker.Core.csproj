@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BankApp.Docker.Commons\BankApp.Docker.Commons.csproj" />
+    <ProjectReference Include="..\BankApp.Docker.Data\BankApp.Docker.Data.csproj" />
+    <ProjectReference Include="..\BankApp.Docker.Models\BankApp.Docker.Models.csproj" />
+  </ItemGroup>
+
+</Project>
