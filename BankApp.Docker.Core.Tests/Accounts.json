@@ -3,60 +3,18 @@
     "AccountId": "first",
     "AccountNumber": "12345",
     "UserId": "firstuser",
-    "AccountType": "savings",
-    "Transactions": [
-      {
-        "TransactionId": "firsttransaction",
-        "AccountNumber": "12345",
-        "amount": 2000,
-        "AccountId": "first"
-      },
-      {
-        "TransactionId": "secondtransaction",
-        "AccountNumber": "12345",
-        "amount": 1000,
-        "AccountId": "first"
-      }
-    ]
+    "AccountType": "savings"
   },
   {
     "AccountId": "second",
     "AccountNumber": "67890",
     "UserId": "firstuser",
-    "AccountType": "current",
-    "Transactions": [
-      {
-        "TransactionId": "thirdtransaction",
-        "AccountNumber": "12345",
-        "amount": 3000,
-        "AccountId": "second"
-      },
-      {
-        "TransactionId": "fourthtransaction",
-        "AccountNumber": "12345",
-        "amount": 1800,
-        "AccountId": "second"
-      }
-    ]
+    "AccountType": "current"
   },
   {
     "AccountId": "third",
     "AccountNumber": "6447574",
     "UserId": "secondUser",
-    "AccountType": "current",
-    "Transactions": [
-      {
-        "TransactionId": "fifthtransaction",
-        "AccountNumber": "6447574",
-        "amount": 3000,
-        "AccountId": "third"
-      },
-      {
-        "TransactionId": "sixthtransaction",
-        "AccountNumber": "6447574",
-        "amount": 800,
-        "AccountId": "third"
-      }
-    ]
+    "AccountType": "current"
   }
 ]
