@@ -6,7 +6,7 @@ using System.Text;
 namespace BankApp.Docker.Models
 {
     [Table("Accounts")]
-    public abstract class Account
+    public class Account
     {
         //Properties
         public string AccountId { get; set; } = Guid.NewGuid().ToString();

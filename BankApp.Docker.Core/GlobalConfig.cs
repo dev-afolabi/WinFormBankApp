@@ -18,12 +18,12 @@ namespace BankApp.Docker.Core
         public static void AddIinstance()
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>()
-                .UseSqlite(@"Data Source=C:\Users\hp\Decagon_Tasks\week7-dev-afolabi\BankApp.Docker\BankApp.Docker.Data\BankApplication.db;Cache=Shared");
+                .UseSqlite(@"Data Source=C:\Users\hp\Decagon_Tasks\week7-dev-afolabi\BankApp.Docker\BankApp.Docker.Data\BankApp.db;Cache=Shared");
 
 
             var _ctx = new AppDbContext(optionsBuilder.Options);
             TransactionRepository = new TransactionRepository(_ctx);
-            AccountRepository = new AccountRepository(_ctx);
+            AccountRepository = new AccountRepository(_ctx,TransactionRepository);
             UserRepository = new UserRepository(_ctx,AccountRepository);
             Authentication = new Authentication();
             BankOperation = new BankOperation();

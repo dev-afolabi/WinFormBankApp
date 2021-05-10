@@ -25,10 +25,10 @@ namespace BankApp.Docker.Core.Tests
             optionsBuilder = new DbContextOptionsBuilder<AppDbContext>()
                                 .UseInMemoryDatabase("Data Source=:memory:");
             context = new AppDbContext(optionsBuilder.Options);
-            
+
 
             //insert Seed data
-            if(context.Users.Count() < 1)
+            if (context.Users.Count() < 1)
             {
                 foreach (var item in GetSampleData())
                 {

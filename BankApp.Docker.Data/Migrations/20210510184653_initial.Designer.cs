@@ -3,14 +3,16 @@ using System;
 using BankApp.Docker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BankApp.Docker.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210510184653_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,7 +127,7 @@ namespace BankApp.Docker.Data.Migrations
             modelBuilder.Entity("BankApp.Docker.Models.Account", b =>
                 {
                     b.HasOne("BankApp.Docker.Models.User", "User")
-                        .WithMany("userAccounts")
+                        .WithMany("UserAccounts")
                         .HasForeignKey("UserID");
 
                     b.Navigation("User");
@@ -147,7 +149,7 @@ namespace BankApp.Docker.Data.Migrations
 
             modelBuilder.Entity("BankApp.Docker.Models.User", b =>
                 {
-                    b.Navigation("userAccounts");
+                    b.Navigation("UserAccounts");
                 });
 #pragma warning restore 612, 618
         }

@@ -15,10 +15,10 @@ namespace BankApp.Docker.Core
         private readonly AppDbContext _context;
 
         //Constructor
-        public AccountRepository(AppDbContext context)
+        public AccountRepository(AppDbContext context, ITransactionRepository transactionRepository)
         {
             _context = context;
-            _transactionRepository = GlobalConfig.TransactionRepository;
+            _transactionRepository = transactionRepository;
         }
 
 
@@ -37,7 +37,7 @@ namespace BankApp.Docker.Core
         public Account GetAccountByNumber(string accountNumber)
         {
             var account = _context.Accounts.Include(a => a.Transactions)
-                                            .Where(a => a.AccountNumber == accountNumber).Single();
+                                            .Where(a => a.AccountNumber == accountNumber).SingleOrDefault();
 
             return account;
         }
