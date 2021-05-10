@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Restore dependencies
-    - working-directory: ./BankApp.Docker
       run: dotnet restore
+      working-directory: ./BankApp.Docker
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
