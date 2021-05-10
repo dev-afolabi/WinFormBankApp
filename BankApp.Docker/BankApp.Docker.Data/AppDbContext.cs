@@ -8,13 +8,13 @@ namespace BankApp.Docker.Data
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext()
+        public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {
            
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public AppDbContext()
         {
-            optionsBuilder.UseSqlite(@"Data Source=C:\Users\hp\Decagon_Tasks\week7-dev-afolabi\BankApp.Docker\BankApp.Docker.Data\BankApplication.db;Cache=Shared");
+
         }
 
         public DbSet<User> Users { get; set; }

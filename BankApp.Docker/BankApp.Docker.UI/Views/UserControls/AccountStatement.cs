@@ -23,7 +23,7 @@ namespace BankApp.UI.Views.UserControls
         private void AccountStatement_Load(object sender, EventArgs e)
         {
             cboAccounts.Items.Add("");
-            foreach (var item in _user.userAccounts)
+            foreach (var item in _user.UserAccounts)
             {
                 this.cboAccounts.Items.Add(item.AccountNumber);
             }

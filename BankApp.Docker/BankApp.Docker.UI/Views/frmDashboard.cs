@@ -31,6 +31,7 @@ namespace BankApp.UI
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
+            this.TopMost = true;
             this.lblFullname.Text = _user.Fullname;
 
             Dashboard dash = new Dashboard(_user);

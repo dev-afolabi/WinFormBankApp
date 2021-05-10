@@ -28,7 +28,7 @@ namespace BankApp.UI.Views.UserControls
         {
             //Initialize combo box values
             cboWithdraw.Items.Add("");
-            foreach (var item in _user.userAccounts)
+            foreach (var item in _user.UserAccounts)
             {
                 this.cboWithdraw.Items.Add(item.AccountNumber);
             }

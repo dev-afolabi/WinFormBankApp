@@ -46,13 +46,13 @@ namespace BankApp.Docker.Models
         public DateTime DateUpdated { get; set; }
 
         //Hold list of user accounts
-        public virtual ICollection<Account> userAccounts { get; set; }
+        public virtual ICollection<Account> UserAccounts { get; set; }
 
 
         //Default constructor sets the Date created and updates a new hashset
         public User()
         {
-            userAccounts = new List<Account>();
+            UserAccounts = new List<Account>();
             DateCreated = DateTime.Now;
             DateUpdated = DateTime.Now;
         }

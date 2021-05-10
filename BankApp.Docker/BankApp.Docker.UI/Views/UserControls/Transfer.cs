@@ -40,13 +40,13 @@ namespace BankApp.UI.Views.UserControls
 
             //Load account details into ccombo box
             cboTransferTo.Items.Add("");
-            foreach (var item in _user.userAccounts)
+            foreach (var item in _user.UserAccounts)
             {
                 this.cboTransferTo.Items.Add(item.AccountNumber);
             }
 
             cboTransferFrom.Items.Add("");
-            foreach (var item in _user.userAccounts)
+            foreach (var item in _user.UserAccounts)
             {
                 this.cboTransferFrom.Items.Add(item.AccountNumber);
             }

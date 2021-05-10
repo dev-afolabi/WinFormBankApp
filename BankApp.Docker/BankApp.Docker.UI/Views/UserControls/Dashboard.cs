@@ -23,10 +23,10 @@ namespace BankApp.UI
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            _user.userAccounts = _accountRepository.GetUserAccounts(_user.UserId);
-            if (_user.userAccounts.Count > 1)
+            _user.UserAccounts = _accountRepository.GetUserAccounts(_user.UserId);
+            if (_user.UserAccounts.Count > 1)
             {
-                foreach (var item in _user.userAccounts)
+                foreach (var item in _user.UserAccounts)
                 {
                     if (item.AccType == "savings")
                     {
@@ -45,20 +45,20 @@ namespace BankApp.UI
             else
             {
 
-                if (_user.userAccounts.Select(a => a).Single().AccType == "savings")
+                if (_user.UserAccounts.Select(a => a).Single().AccType == "savings")
                 {
                     HideCurrent();
 
-                    this.lblSaveAccNo.Text = _user.userAccounts.Select(a => a).Single().AccountNumber.ToString();
+                    this.lblSaveAccNo.Text = _user.UserAccounts.Select(a => a).Single().AccountNumber.ToString();
                     this.lblSavingsBal.Text = _transactionRepository.GetTransactions(this.lblSaveAccNo.Text).Select(t => t.Amount).Sum().ToString();
 
                 }
 
-                if (_user.userAccounts.Select(a => a).Single().AccType == "current")
+                if (_user.UserAccounts.Select(a => a).Single().AccType == "current")
                 {
                     HideSavings();
 
-                    this.lblCurrentAccNo.Text = _user.userAccounts.Select(a => a).Single().AccountNumber.ToString();
+                    this.lblCurrentAccNo.Text = _user.UserAccounts.Select(a => a).Single().AccountNumber.ToString();
                     this.lblCurrentBal.Text = _transactionRepository.GetTransactions(this.lblCurrentAccNo.Text).Select(t => t.Amount).Sum().ToString();
                 }   
 
@@ -66,9 +66,9 @@ namespace BankApp.UI
 
             try
             {
-                if(_user.userAccounts.Count> 1)
+                if(_user.UserAccounts.Count> 1)
                 {
-                    var accountList = _transactionRepository.GetRecentTransactions(_user.userAccounts.Select(a => a.AccountNumber).ToList());
+                    var accountList = _transactionRepository.GetRecentTransactions(_user.UserAccounts.Select(a => a.AccountNumber).ToList());
                     this.transactionsGrid.DataSource = accountList;
                     this.transactionsGrid.Columns["AccountNumber"].Visible = false;
                     this.transactionsGrid.Columns["TransactionId"].Visible = false;

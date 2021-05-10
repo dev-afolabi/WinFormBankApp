@@ -11,15 +11,13 @@ namespace BankApp.Docker.Core
     {
         //privately injected fields
         private readonly IAccountRepository _accountRepository;
-        private readonly ITransactionRepository _transactionRepository;
         private readonly AppDbContext _context;
 
 
-        public UserRepository(AppDbContext context)
+        public UserRepository(AppDbContext context, IAccountRepository accountRepository)
         {
             _context = context;
-            _accountRepository = GlobalConfig.AccountRepository;
-            _transactionRepository = GlobalConfig.TransactionRepository;
+            _accountRepository = accountRepository;
         }
         /// <summary>
         /// Command to add user to the database
@@ -29,9 +27,9 @@ namespace BankApp.Docker.Core
         public bool AddUser(User user)
         {
             _context.Users.Add(user);
-            _context.SaveChanges();
+            var res = _context.SaveChanges();
 
-            return false;
+            return res > 0;
         }
 
         /// <summary>
@@ -41,10 +39,12 @@ namespace BankApp.Docker.Core
         /// <returns></returns>
         public User GetUserByEmail(string email)
         {
-            var user = _context.Users.Where(u => u.Email == email).Single();
-            var accounts = _accountRepository.GetUserAccounts(user.UserId);
-            user.userAccounts = accounts;
-
+            var user = _context.Users.Where(u => u.Email == email).FirstOrDefault();
+            if(user != null)
+            {
+                var accounts = _accountRepository.GetUserAccounts(user.UserId);
+                user.UserAccounts = accounts;
+            }
             return user;
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace BankApp.Docker.Core
         public List<User> GetUsers()
         {
             // get the list of all users in a datatable
-            var listUsers = _context.Users.Include(a => a.userAccounts).ToList();
+            var listUsers = _context.Users.Include(a => a.UserAccounts).ToList();
 
             return listUsers;
         }

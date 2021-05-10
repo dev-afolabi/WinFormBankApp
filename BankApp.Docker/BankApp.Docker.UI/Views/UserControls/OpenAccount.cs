@@ -24,7 +24,7 @@ namespace BankApp.UI.Views.UserControls
 
         private void OpenAccount_Load(object sender, EventArgs e)
         {
-            if (_user.userAccounts.Count > 1)
+            if (_user.UserAccounts.Count > 1)
             {
                 MessageBox.Show("You have 2 accounts already", "Warning", MessageBoxButtons.OK);
                 ControlClass.ShowControl(new Dashboard( _user), this.Parent);
@@ -44,7 +44,7 @@ namespace BankApp.UI.Views.UserControls
             try
             {
                 var amount = Convert.ToDecimal(this.txtInitialDeposit.Text);
-                if (_user.userAccounts.Select(t => t).First().AccType == "savings")
+                if (_user.UserAccounts.Select(t => t).First().AccType == "savings")
                 {
                     if (amount < 0)
                         throw new Exception("Deposit amount must be greater than zero");

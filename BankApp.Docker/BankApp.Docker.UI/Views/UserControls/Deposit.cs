@@ -21,7 +21,7 @@ namespace BankApp.UI
         private void Deposit_Load(object sender, EventArgs e)
         {
             cboAccountSelect.Items.Add("");
-            foreach (var item in _user.userAccounts)
+            foreach (var item in _user.UserAccounts)
             {
                 this.cboAccountSelect.Items.Add(item.AccountNumber);
             }

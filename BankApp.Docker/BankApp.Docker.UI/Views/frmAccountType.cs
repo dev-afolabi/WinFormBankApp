@@ -58,7 +58,7 @@ namespace BankApp.UI
                     var transaction = new Transaction() { AccountNumber = newAccount.AccountNumber, Amount = amount, Note = "Initial Deposit", Type = "Deposit"};
                     newAccount.Transactions.Add(transaction);
 
-                    user.userAccounts.Add(newAccount);
+                    user.UserAccounts.Add(newAccount);
                     _auth.Register(user, _userInputs.Password);
                     MessageBox.Show("Your Registeration was successfull", "Successful", MessageBoxButtons.OK);
                     this.Hide();
@@ -80,7 +80,7 @@ namespace BankApp.UI
                     newAccount.Transactions.Add(transaction);
 
 
-                    user.userAccounts.Add(newAccount);
+                    user.UserAccounts.Add(newAccount);
                     _auth.Register(user, _userInputs.Password);
                     MessageBox.Show("Your Registeration was successfull", "Successful", MessageBoxButtons.OK);
                     this.Hide();
