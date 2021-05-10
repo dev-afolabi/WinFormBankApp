@@ -19,6 +19,7 @@ namespace BankApp.Docker.Core
             _context = context;
             _accountRepository = accountRepository;
         }
+
         /// <summary>
         /// Command to add user to the database
         /// </summary>
