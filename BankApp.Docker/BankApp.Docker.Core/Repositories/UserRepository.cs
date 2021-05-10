@@ -28,7 +28,7 @@ namespace BankApp.Docker.Core
         public bool AddUser(User user)
         {
             _context.Users.Add(user);
-            var res = _context.SaveChanges();
+            int res = _context.SaveChanges();
 
             return res > 0;
         }
