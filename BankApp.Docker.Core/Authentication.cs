@@ -8,9 +8,9 @@ namespace BankApp.Docker.Core
     public class Authentication : IAuthentication
     {
         IUserRepository _userRepository;
-        public Authentication()
+        public Authentication( IUserRepository userRepository)
         {
-            _userRepository = GlobalConfig.UserRepository;
+            _userRepository = userRepository;
         }
 
         public bool Register(User user, string password)
@@ -34,7 +34,7 @@ namespace BankApp.Docker.Core
         }
 
         // email exists
-        internal bool EmailExist(string email)
+        public bool EmailExist(string email)
         {
             if (!string.IsNullOrEmpty(email))
             {

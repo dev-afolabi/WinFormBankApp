@@ -17,7 +17,7 @@ namespace BankApp.Docker.Data
         //{
 
         //}
-        string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\BankApp.db";
+        //string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\BankApp.db";
 
         //protected override void OnConfiguring(DbContextOptionsBuilder options)
         //{

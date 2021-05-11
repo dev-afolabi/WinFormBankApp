@@ -55,6 +55,7 @@ namespace BankApp.Docker.Core.Tests
                 var expected = usersList;
                 var actual = userRepo.GetUsers();
 
+                
 
                 Assert.That(actual.Count, Is.EqualTo(expected.Count));
                 Assert.That(actual, Is.Not.Null);
@@ -108,6 +109,7 @@ namespace BankApp.Docker.Core.Tests
         [Test]
         public void AddUser_WhenCalled_returnsTrueOnAdd()
         {
+
             User newUser = new User() { Firstname = "Khalid", LastName = "Ridwan", Email = "also@gmail.com" };
 
             var userRepo = new UserRepository(context, null);

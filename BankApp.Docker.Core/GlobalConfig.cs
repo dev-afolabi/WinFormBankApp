@@ -25,8 +25,8 @@ namespace BankApp.Docker.Core
             TransactionRepository = new TransactionRepository(_ctx);
             AccountRepository = new AccountRepository(_ctx,TransactionRepository);
             UserRepository = new UserRepository(_ctx,AccountRepository);
-            Authentication = new Authentication();
-            BankOperation = new BankOperation();
+            Authentication = new Authentication(UserRepository);
+            BankOperation = new BankOperation(TransactionRepository, AccountRepository);
         }
 
         public static void RemoveIinstance()

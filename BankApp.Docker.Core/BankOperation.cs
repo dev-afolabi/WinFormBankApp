@@ -12,10 +12,10 @@ namespace BankApp.Docker.Core
 
 
         //Constructor
-        public BankOperation()
+        public BankOperation(ITransactionRepository transactionRepository, IAccountRepository accountRepository)
         {
-            _transactionRepository = GlobalConfig.TransactionRepository;
-            _accountRepository = GlobalConfig.AccountRepository;
+            _transactionRepository = transactionRepository;
+            _accountRepository = accountRepository;
 
         }
 
