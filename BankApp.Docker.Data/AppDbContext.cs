@@ -13,19 +13,7 @@ namespace BankApp.Docker.Data
         {
 
         }
-        //public AppDbContext()
-        //{
-
-        //}
-        //string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\BankApp.db";
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder options)
-        //{
-
-        //    //options.UseSqlite($"Data Source={path};Cache=Shared");
-        //    options.UseSqlite(@"Data Source=C:\Users\hp\Decagon_Tasks\week7-dev-afolabi\BankApp.Docker\BankApp.Docker.Data\BankApp.db;Cache=Shared");
         
-        //}
 
         public DbSet<User> Users { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
