@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankApp.Docker.Data", "Bank
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankApp.Docker.UI", "BankApp.Docker.UI\BankApp.Docker.UI.csproj", "{8F29C7A3-AE71-46C3-9B6C-83607A43D35F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankApp.Docker.Core.Tests", "BankApp.Docker.Core.Tests\BankApp.Docker.Core.Tests.csproj", "{7C158EC3-CB5A-49F4-896F-6C41FF624866}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankApp.Docker.Core.Tests", "BankApp.Docker.Core.Tests\BankApp.Docker.Core.Tests.csproj", "{7C158EC3-CB5A-49F4-896F-6C41FF624866}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
